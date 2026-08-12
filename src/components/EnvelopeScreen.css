@@ -135,6 +135,8 @@
   transform: rotateX(180deg);
 }
 
+/* Organic, irregular wax-blob shape (real wax seals are never a
+   perfect circle) — colored from the site's pink/rose/wine tokens. */
 .seal-button {
   position: absolute;
   left: 50%;
@@ -144,16 +146,10 @@
   height: 64px;
   border-radius: 50%;
   border: none;
+  padding: 0;
   cursor: pointer;
-  background: radial-gradient(
-    circle at 35% 30%,
-    #e3a6b4,
-    var(--color-rose) 55%,
-    var(--color-wine) 100%
-  );
-  box-shadow:
-    0 8px 18px -6px rgba(124, 46, 69, 0.55),
-    inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  background: transparent;
+  overflow: hidden;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -164,26 +160,54 @@
   animation: seal-breathe 2.6s ease-in-out infinite;
 }
 
+/* soft drip details along the lower rim, like set wax */
+.seal-button::before,
+.seal-button::after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--color-rose),
+    var(--color-wine-deep) 80%
+  );
+  border-radius: 50%;
+  box-shadow: inset 0 -1px 2px rgba(92, 32, 51, 0.35);
+}
+
+.seal-button::before {
+  width: 10px;
+  height: 8px;
+  bottom: -3px;
+  left: 22%;
+}
+
+.seal-button::after {
+  width: 7px;
+  height: 6px;
+  bottom: -4px;
+  right: 28%;
+}
+
 .seal-button:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-.seal-button svg {
-  width: 30px;
-  height: 30px;
+.seal-button__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.3);
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes seal-breathe {
   0%,
   100% {
-    box-shadow:
-      0 8px 18px -6px rgba(124, 46, 69, 0.55),
-      inset 0 2px 3px rgba(255, 255, 255, 0.35);
+    filter: drop-shadow(0 8px 14px rgba(124, 46, 69, 0.4));
   }
   50% {
-    box-shadow:
-      0 10px 24px -6px rgba(124, 46, 69, 0.7),
-      inset 0 2px 3px rgba(255, 255, 255, 0.4);
+    filter: drop-shadow(0 11px 20px rgba(124, 46, 69, 0.55));
   }
 }
 

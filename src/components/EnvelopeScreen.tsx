@@ -1,10 +1,10 @@
-import SealMark from './icons/SealMark'
-import './EnvelopeScreen.css'
+import waxSealMark from "../assets/wax-seal-mark.png";
+import "./EnvelopeScreen.css";
 
 interface EnvelopeScreenProps {
-  isOpening: boolean
-  isRevealed: boolean
-  onOpen: () => void
+  isOpening: boolean;
+  isRevealed: boolean;
+  onOpen: () => void;
 }
 
 /**
@@ -12,21 +12,25 @@ interface EnvelopeScreenProps {
  * opening animation; once the animation finishes the parent hides
  * this screen entirely (isRevealed becomes true).
  */
-export default function EnvelopeScreen({ isOpening, isRevealed, onOpen }: EnvelopeScreenProps) {
+export default function EnvelopeScreen({
+  isOpening,
+  isRevealed,
+  onOpen,
+}: EnvelopeScreenProps) {
   const screenClassName = [
-    'envelope-screen',
-    isOpening ? 'envelope-screen--opening' : '',
-    isRevealed ? 'envelope-screen--hidden' : '',
+    "envelope-screen",
+    isOpening ? "envelope-screen--opening" : "",
+    isRevealed ? "envelope-screen--hidden" : "",
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(" ");
 
   return (
     <div className={screenClassName} aria-hidden={isRevealed}>
       <p className="envelope-screen__word">You are invited!</p>
       <p className="envelope-screen__sub">A celebration awaits</p>
 
-      <div className={`envelope ${isOpening ? 'envelope--open' : ''}`}>
+      <div className={`envelope ${isOpening ? "envelope--open" : ""}`}>
         <div className="envelope__body" />
         <div className="envelope__flap" />
         <button
@@ -35,11 +39,16 @@ export default function EnvelopeScreen({ isOpening, isRevealed, onOpen }: Envelo
           disabled={isOpening}
           aria-label="Open invitation"
         >
-          <SealMark />
+          <img
+            src={waxSealMark}
+            alt=""
+            className="seal-button__image"
+            draggable={false}
+          />
         </button>
       </div>
 
       <p className="envelope-screen__hint">Tap the seal to open</p>
     </div>
-  )
+  );
 }
