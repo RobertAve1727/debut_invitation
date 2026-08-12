@@ -1,9 +1,67 @@
 .hero {
   position: relative;
+  width: 100%;
   text-align: center;
   background: radial-gradient(ellipse at 50% 0%, #fdf0f1 0%, transparent 55%);
-  padding: 64px 32px 70px;
+  padding: 64px var(--section-padding-x) 70px;
   overflow: hidden;
+}
+
+.hero__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding-top: 84px;
+    padding-bottom: 90px;
+  }
+
+  .hero__silhouette {
+    width: 190px;
+  }
+
+  .hero__name {
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+  }
+
+  .hero__occasion {
+    font-size: clamp(4.2rem, 9vw, 5.6rem);
+  }
+
+  .hero__venue-place {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .hero__silhouette {
+    width: 220px;
+  }
+
+  .hero__name {
+    font-size: clamp(2.6rem, 3vw, 3.2rem);
+  }
+
+  .hero__occasion {
+    font-size: clamp(5.2rem, 7vw, 6.6rem);
+    margin-bottom: 36px;
+  }
+
+  .hero__venue-place {
+    font-size: 1.45rem;
+  }
+
+  .hero__cta {
+    font-size: 1.15rem;
+    padding: 15px 40px;
+  }
 }
 
 .hero__butterfly {
@@ -161,7 +219,9 @@
   font-size: 1.05rem;
   text-decoration: none;
   letter-spacing: 0.5px;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .hero__cta:hover {

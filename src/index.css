@@ -13,9 +13,38 @@
   --color-line: rgba(124, 46, 69, 0.25);
 
   /* ---- type tokens ---- */
-  --font-script: 'Beau Rivage', cursive;
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-label: 'Cinzel', serif;
+  --font-script: "Beau Rivage", cursive;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-label: "Cinzel", serif;
+
+  /* ---- layout tokens ----
+     The "stage" is the card the invitation lives in. It stays phone-width
+     on small screens, then widens in steps so the page fills laptop/desktop
+     viewports instead of floating as a small mobile card. Section padding
+     and type sizes scale alongside it via the same breakpoints. */
+  --content-max-width: 420px;
+  --section-padding-x: 32px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --content-max-width: 520px;
+    --section-padding-x: 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --content-max-width: 620px;
+    --section-padding-x: 80px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --content-max-width: 680px;
+    --section-padding-x: 100px;
+  }
 }
 
 * {
@@ -29,7 +58,8 @@ body {
 }
 
 body {
-  background: radial-gradient(ellipse at 20% 0%, #fdeff1 0%, transparent 55%),
+  background:
+    radial-gradient(ellipse at 20% 0%, #fdeff1 0%, transparent 55%),
     radial-gradient(ellipse at 85% 100%, #f6e4d8 0%, transparent 55%),
     var(--color-cream);
   min-height: 100vh;
