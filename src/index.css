@@ -1,0 +1,57 @@
+:root {
+  /* ---- color tokens ---- */
+  --color-cream: #fbf3ea;
+  --color-paper: #fffcf8;
+  --color-blush: #f4dce1;
+  --color-blush-deep: #e9bfc9;
+  --color-rose: #c77e92;
+  --color-wine: #7c2e45;
+  --color-wine-deep: #5c2033;
+  --color-gold: #b68a4e;
+  --color-gold-soft: #d9bd8c;
+  --color-ink: #5a3b44;
+  --color-line: rgba(124, 46, 69, 0.25);
+
+  /* ---- type tokens ---- */
+  --font-script: 'Beau Rivage', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-label: 'Cinzel', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(ellipse at 20% 0%, #fdeff1 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 100%, #f6e4d8 0%, transparent 55%),
+    var(--color-cream);
+  min-height: 100vh;
+  font-family: var(--font-serif);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a {
+  color: inherit;
+}

@@ -1,0 +1,10 @@
+.site-footer {
+  text-align: center;
+  padding: 30px 20px 46px;
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-wine);
+  opacity: 0.5;
+}

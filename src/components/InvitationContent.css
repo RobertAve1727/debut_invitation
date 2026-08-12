@@ -1,0 +1,11 @@
+.invitation-content {
+  position: relative;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1s ease 0.35s, transform 1s ease 0.35s;
+}
+
+.invitation-content--revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

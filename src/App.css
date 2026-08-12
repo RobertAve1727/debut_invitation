@@ -1,0 +1,9 @@
+.stage {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: var(--color-paper);
+  box-shadow: 0 0 60px rgba(124, 46, 69, 0.08);
+  overflow: hidden;
+}
