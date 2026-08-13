@@ -1,11 +1,43 @@
 .invitation-content {
   position: relative;
+  height: 100%;
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 1s ease 0.35s, transform 1s ease 0.35s;
+  transition:
+    opacity 1s ease 0.35s,
+    transform 1s ease 0.35s;
 }
 
 .invitation-content--revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hero is its own full screen — no page scroll here. A safety
+   overflow-y is included in case content runs taller than a very
+   short viewport, but it isn't meant to scroll under normal use. */
+.invitation-content__hero-stage {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+}
+
+/* Details is the only screen that's meant to scroll. */
+.invitation-content__details-stage {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: step-fade-in 0.6s ease both;
+}
+
+@keyframes step-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

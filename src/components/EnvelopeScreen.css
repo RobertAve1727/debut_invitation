@@ -5,9 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(ellipse at 50% 15%, #fdf1f3 0%, transparent 60%),
-    linear-gradient(180deg, #f8e4e8 0%, #f1d3da 60%, #e9c3cd 100%);
+  background: url("../assets/hero/watercolor-bg.png") center center / cover
+    no-repeat;
   z-index: 50;
   transition:
     opacity 0.9s ease,
@@ -93,10 +92,11 @@
 .envelope__body {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #fdf6f5, #f3dee2);
+  background: linear-gradient(160deg, var(--color-paper), var(--color-cream));
   border-radius: 6px;
   box-shadow:
-    0 20px 40px -14px rgba(124, 46, 69, 0.35),
+    0 20px 44px -14px rgba(124, 46, 69, 0.45),
+    0 0 0 1px rgba(199, 126, 146, 0.35),
     inset 0 0 0 1px rgba(124, 46, 69, 0.08);
 }
 
@@ -107,7 +107,7 @@
   bottom: 0;
   width: 52%;
   height: 78%;
-  background: linear-gradient(200deg, rgba(124, 46, 69, 0.06), transparent 60%);
+  background: linear-gradient(200deg, rgba(124, 46, 69, 0.08), transparent 60%);
   clip-path: polygon(0 100%, 100% 100%, 0 0);
 }
 
@@ -122,12 +122,12 @@
   left: 0;
   right: 0;
   height: 62%;
-  background: linear-gradient(200deg, #fbedef, #f1d6dc);
+  background: linear-gradient(200deg, var(--color-cream), var(--color-blush));
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   transform-origin: top center;
   transform: rotateX(0deg);
   transition: transform 0.9s cubic-bezier(0.6, 0.05, 0.3, 1);
-  box-shadow: 0 1px 0 rgba(124, 46, 69, 0.12);
+  box-shadow: 0 1px 0 rgba(124, 46, 69, 0.15);
   z-index: 3;
 }
 
@@ -220,11 +220,12 @@
 .envelope-screen__hint {
   margin-top: 26px;
   font-family: var(--font-label);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: bold;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--color-wine);
-  opacity: 0.65;
+  opacity: 1;
   transition: opacity 0.5s ease;
 }
 

@@ -5,11 +5,33 @@
   background: radial-gradient(ellipse at 50% 0%, #fdf0f1 0%, transparent 55%);
   padding: 64px var(--section-padding-x) 70px;
   overflow: hidden;
+
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero__inner {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__gown {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 360px;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 @media (min-width: 640px) {
@@ -232,4 +254,32 @@
 .floral-band {
   height: 64px;
   background: linear-gradient(180deg, transparent, var(--color-blush) 120%);
+}
+
+button.hero__cta {
+  font: inherit;
+  appearance: none;
+}
+
+.hero__branch {
+  position: absolute;
+  height: auto;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__branch--top-left {
+  top: 8%;
+  left: -6%;
+  transform: rotate(-4deg);
+  width: 25%;
+}
+
+.hero__branch--right {
+  top: 75%;
+  right: -10%;
+  transform: scaleX(-1) rotate(-8deg);
+  opacity: 0.6;
+  width: 60%;
 }

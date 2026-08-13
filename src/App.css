@@ -1,7 +1,7 @@
 .stage {
   max-width: var(--stage-max-width);
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   background: var(--color-paper);
   box-shadow: 0 0 60px rgba(124, 46, 69, 0.08);

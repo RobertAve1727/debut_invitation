@@ -1,13 +1,25 @@
 import Butterfly from "./icons/Butterfly";
-import Silhouette from "./icons/Silhouette";
 import RibbonDivider from "./icons/RibbonDivider";
 import { eventDetails } from "../data/eventDetails";
+import watercolorBg from "../assets/hero/watercolor-bg.png";
+import branch from "../assets/hero/branch.png";
+import gownSilhouette from "../assets/hero/gown-silhouette.png";
 import "./Hero.css";
 
-/** The opening section: name, occasion, date, time, venue, and a link to details. */
-export default function Hero() {
+/** The opening screen: name, occasion, date, time, venue, and a button into details. */
+export default function Hero({ onSeeDetails }: { onSeeDetails: () => void }) {
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{ backgroundImage: `url(${watercolorBg})` }}
+    >
+      <img
+        src={branch}
+        alt=""
+        className="hero__branch hero__branch--top-left"
+      />
+      <img src={branch} alt="" className="hero__branch hero__branch--right" />
+
       <Butterfly className="hero__butterfly hero__butterfly--top-left" />
       <Butterfly
         className="hero__butterfly hero__butterfly--top-right"
@@ -18,13 +30,13 @@ export default function Hero() {
       <div className="hero__inner">
         <p className="hero__eyebrow">You're invited to</p>
 
-        <Silhouette className="hero__silhouette" />
-
         <h1 className="hero__name">
           {eventDetails.celebrantPossessive} {eventDetails.age}
           <sup>th</sup>
         </h1>
         <div className="hero__occasion">{eventDetails.occasion}</div>
+
+        <img src={gownSilhouette} alt="" className="hero__gown" />
 
         <RibbonDivider className="hero__divider" />
 
@@ -39,9 +51,9 @@ export default function Hero() {
           <p className="hero__venue-place">{eventDetails.venue}</p>
         </div>
 
-        <a href="#details" className="hero__cta">
+        <button type="button" className="hero__cta" onClick={onSeeDetails}>
           See details
-        </a>
+        </button>
       </div>
 
       <Butterfly className="hero__butterfly hero__butterfly--bottom-right" />
